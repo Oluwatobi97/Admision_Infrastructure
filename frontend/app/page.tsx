@@ -1,65 +1,105 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="min-h-screen bg-white text-slate-900">
+      <header className="flex items-center justify-between px-8 py-6">
+        <div className="flex items-center gap-3">
+          <div className="h-10 w-10 rounded-lg bg-red-600" />
+          <span className="text-xl font-semibold text-red-700">SchoolName</span>
+        </div>
+
+        <nav className="flex items-center gap-6 text-sm font-medium text-slate-700">
+          <Link href="#about" className="hover:text-red-600">
+            About Us
+          </Link>
+          <Link href="#contact" className="hover:text-red-600">
+            Contact
+          </Link>
+          <Link
+            href="/auth/login"
+            className="rounded-full border border-red-600 bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+          >
+            Sign In
+          </Link>
+        </nav>
+      </header>
+
+      <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-6">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/image1.jpg"
+          alt="Hero Background"
+          fill
+          sizes="100vw"
+          className="object-cover"
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 flex w-full max-w-4xl flex-col items-center gap-8 text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Empowering Students. Building Futures.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="max-w-2xl text-base text-white/90 sm:text-lg">
+            A modern admission platform for the next generation — streamlined,
+            secure, and built for schools.
+          </p>
+          <Link
+            href="/auth/register"
+            className="inline-flex items-center justify-center rounded-full bg-white px-10 py-4 text-lg font-semibold text-red-600 shadow-lg shadow-red-500/20 transition hover:bg-red-50"
+          >
+            Sign Up
+          </Link>
+        </div>
+      </section>
+
+      <section id="about" className="px-8 py-16">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-3xl font-semibold text-red-700">About Us</h2>
+          <p className="mt-4 text-slate-600">
+            We help schools streamline their admissions process with a secure,
+            easy-to-use platform that gives administrators full control and
+            students a seamless experience.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section id="contact" className="bg-red-50 px-8 py-16">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-3xl font-semibold text-red-700">Contact Us</h2>
+          <p className="mt-4 text-slate-600">
+            Have questions? Reach out and we’ll be happy to help you get
+            started.
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl bg-white p-6 shadow">
+              <h3 className="text-lg font-semibold text-red-700">Email</h3>
+              <p className="mt-2 text-slate-600">support@schoolname.edu</p>
+            </div>
+            <div className="rounded-2xl bg-white p-6 shadow">
+              <h3 className="text-lg font-semibold text-red-700">Phone</h3>
+              <p className="mt-2 text-slate-600">+1 (555) 123‑4567</p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <footer className="border-t border-slate-200 bg-white px-8 py-8">
+        <div className="mx-auto flex max-w-4xl flex-col gap-4 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+          <div>
+            © {new Date().getFullYear()} SchoolName. All rights reserved.
+          </div>
+          <div className="flex items-center gap-4">
+            <Link href="#about" className="hover:text-red-600">
+              About
+            </Link>
+            <Link href="#contact" className="hover:text-red-600">
+              Contact
+            </Link>
+          </div>
+        </div>
+      </footer>
+    </main>
   );
 }
