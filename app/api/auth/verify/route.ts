@@ -9,4 +9,4 @@ const verify = async (request: NextRequest) => {
 }
 
 
-export const POST = globalErrorHandler(verify)
+export const GET = globalErrorHandler(verify)

@@ -13,4 +13,4 @@ export const refresh = async (request: NextRequest, token: string) => {
 }
 
 
-export const POST = globalErrorHandler(getRefreshToken(refresh))
+export const GET = globalErrorHandler(getRefreshToken(refresh))

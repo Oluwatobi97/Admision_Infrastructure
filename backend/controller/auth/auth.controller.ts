@@ -1,6 +1,7 @@
 import { TBaseAuth, TcreateSchool } from "@/backend/lib/zod-schema";
 import { AuthService } from "./auth.service";
 import { NextRequest, NextResponse } from "next/server";
+import { BadRequestError } from "@/backend/utils/AppErrror";
 
 export class AuthController {
     authService: AuthService
@@ -18,8 +19,9 @@ export class AuthController {
     }
 
     async verifyEmail (request: NextRequest) {
-        const body = await request.json()
-        const { tokenHash } = body
+        const searchParams = request.nextUrl.searchParams
+        const tokenHash = searchParams.get("token")
+        if (!tokenHash) throw new BadRequestError("Invalid request")
         const userId = await this.authService.verifyEmail(tokenHash)
         return NextResponse.json(
             { mesage: "Verrified", userId },

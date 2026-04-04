@@ -29,7 +29,7 @@ export class AuthService {
 
         await this.authRepository.createUser({ email, id: userId, passwordHash, isVerified: false, name: schoolName },
             tokenHash, timeLine)
-        await sendEmail(`${ BASE_URL }verify/${ tokenHash }`, email)
+        await sendEmail(`${ BASE_URL }auth/verifyEmail?token=${ tokenHash }`, email)
         return
     }
 
