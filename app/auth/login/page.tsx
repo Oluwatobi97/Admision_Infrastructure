@@ -11,7 +11,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex">
       {/* LEFT */}
-      <div className="hidden md:flex w-1/2 bg-red-600 items-center justify-center text-white">
+      <div className="hidden md:flex w-1/2 bg-[#E24B4A] items-center justify-center text-white">
         <h1 className="text-3xl font-bold">School Portal</h1>
       </div>
 
@@ -24,6 +24,8 @@ export default function LoginPage() {
 
           {/* ROLE SELECT */}
           <select
+            id="role"
+            title="select"
             className="w-full mb-4 p-3 border text-gray-700 rounded-lg"
             value={role}
             onChange={(e) => setRole(e.target.value)}
@@ -51,7 +53,7 @@ export default function LoginPage() {
           />
 
           {/* Button */}
-          <button className="w-full bg-red-600 text-white p-3 rounded-lg hover:bg-red-700">
+          <button className="w-full  bg-[#E24B4A] text-white p-3 rounded-lg hover:bg-[#A32D2D]">
             Login
           </button>
 

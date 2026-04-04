@@ -19,7 +19,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex">
       {/* LEFT */}
-      <div className="hidden md:flex w-1/2 bg-red-600 items-center justify-center text-white">
+      <div className="hidden md:flex w-1/2 bg-[#E24B4A] items-center justify-center text-white">
         <h1 className="text-3xl font-bold">Create Account</h1>
       </div>
 
@@ -78,7 +78,7 @@ export default function RegisterPage() {
             {/* Button */}
             <button
               type="submit"
-              className="w-full bg-red-600 cursor-pointer text-white p-3 rounded-lg hover:bg-red-700"
+              className="w-full bg-[#E24B4A] cursor-pointer text-white p-3 rounded-lg hover:bg-[#A32D2D]"
             >
               Register
             </button>
